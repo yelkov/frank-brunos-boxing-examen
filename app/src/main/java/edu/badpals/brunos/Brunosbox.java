@@ -111,12 +111,8 @@ public class Brunosbox
          * puntos obtenidos por cada pugil en cada round.
          * Se llaman round score.
          */
-/*
-        whiteScoreCard.loadJudgeScoreCard(
-                // Escribe aquí el código para acceder al primer
-                // elemento del array String[][] data de la línea 13,
-                // la tarjeta blanca
-        );
+
+        whiteScoreCard.loadJudgeScoreCard(data[0]);
         System.out.println(whiteScoreCard);
 
         /**

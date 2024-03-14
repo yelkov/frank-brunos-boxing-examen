@@ -1,6 +1,6 @@
 package edu.badpals.brunos.rounds;
 
-public class RegularRound {
+public class RegularRound implements Round{
     private String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
@@ -21,5 +21,15 @@ public class RegularRound {
 
     public String getBlueBoxerScore() {
         return String.valueOf(this.blueBoxerScore);
+    }
+
+    @Override
+    public byte getredBoxerScore() {
+        return this.redBoxerScore;
+    }
+
+    @Override
+    public byte getblueBoxerScore() {
+        return this.blueBoxerScore;
     }
 }
