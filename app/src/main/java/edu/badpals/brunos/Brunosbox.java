@@ -1,5 +1,6 @@
 package edu.badpals.brunos;
 
+import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.scorecard.ScoreCard;
 
 public class Brunosbox
@@ -91,7 +92,7 @@ public class Brunosbox
          *
          * Pasa el caso test que propongo.
          */
-/*
+
         RegularRound round = new RegularRound("10 - 9");
         round.boxerRoundScore();
         System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +

@@ -40,7 +40,6 @@ public class ScoreCard {
                 +"\t\t\t0 rounds\t\t\n" //implementar getNumRounds
                 +"\tRound\tScore\tRound\tScore\tRound\n"
                 +"\tScore\tTotal\t     \tTotal\tScore\n"
-                +"\tRegular round 10 - 9"
                 ;
     }
 
