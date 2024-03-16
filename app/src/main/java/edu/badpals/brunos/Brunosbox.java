@@ -2,6 +2,7 @@ package edu.badpals.brunos;
 
 import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.RegularRound;
+import edu.badpals.brunos.rounds.RoundFactory;
 import edu.badpals.brunos.scorecard.ScoreCard;
 
 public class Brunosbox
@@ -161,7 +162,7 @@ public class Brunosbox
          * en el casting, las siguientes líneas daran error
          * en tiempo de ejecución.
          */
-/*
+
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
         KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
