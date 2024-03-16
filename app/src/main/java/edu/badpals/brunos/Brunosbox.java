@@ -1,5 +1,6 @@
 package edu.badpals.brunos;
 
+import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.scorecard.ScoreCard;
 
@@ -119,7 +120,7 @@ public class Brunosbox
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
-/*
+
         System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
                 " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
@@ -128,7 +129,7 @@ public class Brunosbox
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
          */
-/*
+
         System.out.println(whiteScoreCard);
         System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
                 " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
@@ -144,11 +145,11 @@ public class Brunosbox
          * En KnockdownRound la puntuacion se almacena
          * como un número entero, no como un String.
          */
-/*
+
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
         knockdownRound.boxerRoundScore();
-        System.out.println("\n\t knockdown round\t" + knockdownRound.getRedBoxerScore() +
-                " - " + knockdownRound.getBlueBoxerScore());
+        System.out.println("\n\t knockdown round\t" + knockdownRound.getredBoxerScore() +
+                " - " + knockdownRound.getblueBoxerScore());
 
         /**
          * Crea una clase RoundFactory que crea

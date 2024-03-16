@@ -49,14 +49,14 @@ public class ScoreCard {
                     "\tRound\tScore\tRound\tScore\tRound\n"+
                     "\tScore\tTotal\t     \tTotal\tScore\n";
 
-        Integer blueTotal = 0;
-        Integer redTotal = 0;
+        Integer blueScore = 0;
+        Integer redScore = 0;
         for (Round round : rounds) {
-            blueTotal += round.getblueBoxerScore();
-            redTotal += round.getredBoxerScore();
-            string += ("\t"+round.getredBoxerScore()+"\t"+redTotal+"\t"+(rounds.indexOf(round)+1)+"\t"+blueTotal+"\t"+round.getblueBoxerScore()+"\n");
+            blueScore += round.getblueBoxerScore();
+            redScore += round.getredBoxerScore();
+            string += ("\t"+round.getredBoxerScore()+"\t"+redScore+"\t"+(rounds.indexOf(round)+1)+"\t"+blueScore+"\t"+round.getblueBoxerScore()+"\n");
                  }
-        string += "\tFINAL SCORE: "+redTotal+" - "+blueTotal+" FINAL SCORE\n";
+        ;
 
         return string.toString();
     }
@@ -67,6 +67,20 @@ public class ScoreCard {
             this.rounds.add(new RegularRound(this.judgeScoreCard[i]));
                 }
             }
+
+    public int getRedBoxerFinalScore() {
+        int redTotal = 0;
+        for (Round round : rounds){
+            redTotal += round.getredBoxerScore();
+        }return redTotal;
+    }
+
+    public int getBlueBoxerFinalScore() {
+        int blueTotal = 0;
+        for (Round round : rounds){
+            blueTotal += round.getblueBoxerScore();
+        }return blueTotal;
+    }
 }
 
 
