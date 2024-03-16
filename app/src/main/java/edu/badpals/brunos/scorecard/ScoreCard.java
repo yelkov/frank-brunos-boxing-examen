@@ -2,6 +2,7 @@ package edu.badpals.brunos.scorecard;
 
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.Round;
+import edu.badpals.brunos.rounds.RoundFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,7 +65,7 @@ public class ScoreCard {
     public void loadJudgeScoreCard(String[] puntuaciones) {
         setJudgeScoreCard(puntuaciones);
         for (int i=0;i< judgeScoreCard.length;i++) {
-            this.rounds.add(new RegularRound(this.judgeScoreCard[i]));
+            this.rounds.add(RoundFactory.getRound(this.judgeScoreCard[i]));
                 }
             }
 
