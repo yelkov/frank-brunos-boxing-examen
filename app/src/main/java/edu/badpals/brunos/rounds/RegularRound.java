@@ -7,20 +7,13 @@ public class RegularRound implements Round{
 
     public RegularRound(String roundScore){
         this.roundScore = roundScore;
+        boxerRoundScore();
     }
     public void boxerRoundScore(){
         String[] puntuaciones = this.roundScore.split(" - ");
         this.redBoxerScore = (byte)Integer.parseInt(puntuaciones[0]);
         this.blueBoxerScore = (byte)Integer.parseInt(puntuaciones[1]);
 
-    }
-
-    public String getRedBoxerScore() {
-        return String.valueOf(this.redBoxerScore);
-    }
-
-    public String getBlueBoxerScore() {
-        return String.valueOf(this.blueBoxerScore);
     }
 
     @Override

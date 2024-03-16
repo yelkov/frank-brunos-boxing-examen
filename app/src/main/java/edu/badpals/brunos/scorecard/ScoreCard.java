@@ -3,15 +3,17 @@ package edu.badpals.brunos.scorecard;
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.Round;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ScoreCard {
 
     private String color;
     private String redCorner = "";
     private String blueCorner = "";
-    private String[] judgeScoreCard;
-    private Round[] rounds = new Round[10];
+    private String[] judgeScoreCard = new String[10];
+    private List<Round> rounds = new ArrayList<>();
 
     public ScoreCard(String color){
         this.color = color;
@@ -32,7 +34,7 @@ public class ScoreCard {
         return this.blueCorner;
     }
     public byte getNumRounds(){
-        return (byte)rounds.length;
+        return (byte)rounds.size();
     }
 
     private void setJudgeScoreCard(String[] judgeScoreCard) {
@@ -41,20 +43,28 @@ public class ScoreCard {
 
     @Override
     public String toString(){
-        return "\t\t\t   "+getColor()+"\t\t\n"
-                +"\t\t"+getBcorner()+"\t"+getRcorner()+"\t\t\n"
-                +"\t\t\t"+getNumRounds()+" rounds\t\t\n"
-                +"\tRound\tScore\tRound\tScore\tRound\n"
-                +"\tScore\tTotal\t     \tTotal\tScore\n"
-                +"\t" //aqui van las puntuaciones pero no consigo inicializar rounds -> rounds[0].getredBoxerScore() me devuelve null
-                ;
+         String string = "\t\t\t   "+getColor()+"\t\t\n"+
+                    "\t\t"+getBcorner()+"\t"+getRcorner()+"\t\t\n"+
+                    "\t\t\t"+getNumRounds()+" rounds\t\t\n"+
+                    "\tRound\tScore\tRound\tScore\tRound\n"+
+                    "\tScore\tTotal\t     \tTotal\tScore\n";
+
+        Integer blueTotal = 0;
+        Integer redTotal = 0;
+        for (Round round : rounds) {
+            blueTotal += round.getblueBoxerScore();
+            redTotal += round.getredBoxerScore();
+            string += ("\t"+round.getredBoxerScore()+"\t"+redTotal+"\t"+(rounds.indexOf(round)+1)+"\t"+blueTotal+"\t"+round.getblueBoxerScore()+"\n");
+                 }
+        string += "\tFINAL SCORE: "+redTotal+" - "+blueTotal+" FINAL SCORE\n";
+
+        return string.toString();
     }
 
     public void loadJudgeScoreCard(String[] puntuaciones) {
         setJudgeScoreCard(puntuaciones);
-        for (int i=0;i< rounds.length;i++) {
-            this.rounds[i] = new RegularRound(judgeScoreCard[i]);
-            this.rounds[i].boxerRoundScore();
+        for (int i=0;i< judgeScoreCard.length;i++) {
+            this.rounds.add(new RegularRound(this.judgeScoreCard[i]));
                 }
             }
 }
