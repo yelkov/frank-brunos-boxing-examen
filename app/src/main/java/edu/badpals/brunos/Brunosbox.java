@@ -95,8 +95,8 @@ public class Brunosbox
 
         RegularRound round = new RegularRound("10 - 9");
         round.boxerRoundScore();
-        System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
-                " - " + round.getBlueBoxerScore());
+        System.out.println("\n\t Regular round\t" + round.getredBoxerScore() +
+                " - " + round.getblueBoxerScore());
 
         /**
          * Carga en la tarjeta blanca
