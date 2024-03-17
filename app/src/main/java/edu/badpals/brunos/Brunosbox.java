@@ -1,6 +1,7 @@
 package edu.badpals.brunos;
 
 import edu.badpals.brunos.rounds.KnockdownRound;
+import edu.badpals.brunos.rounds.PointsDeducted;
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.RoundFactory;
 import edu.badpals.brunos.scorecard.ScoreCard;
@@ -218,16 +219,16 @@ public class Brunosbox
          * En PointsDeducted la puntuacion se almacena
          * como un número entero, no como un String.
          */
-/*
+
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
         deducted.boxerRoundScore();
-        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
-                " - " + deducted.getBlueBoxerScore());
+        System.out.println("\n\t points deducted round\t" + deducted.getredBoxerScore() +
+                " - " + deducted.getblueBoxerScore());
 
         deducted = new PointsDeducted("1, 8 - 10");
         deducted.boxerRoundScore();
-        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
-                " - " + deducted.getBlueBoxerScore());
+        System.out.println("\n\t points deducted round\t" + deducted.getredBoxerScore() +
+                " - " + deducted.getblueBoxerScore());
 
         /**
          * Extiende o modifica la clase RoundFactory para crear
@@ -239,7 +240,7 @@ public class Brunosbox
          * en el casting, las siguiente línea dará error
          * en tiempo de ejecución.
          */
-/*
+
         PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
         System.out.println("\n\t factory deducted round: " + pointsDeducted);
 
@@ -266,25 +267,21 @@ public class Brunosbox
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
          */
-/*
+
         ScoreCard pinkScoreCard = new ScoreCard("PINK");
         pinkScoreCard.setRCorner("Rocky Balboa");
         pinkScoreCard.setBCorner("Apollo Creed");
 
-        pinkScoreCard.loadJudgeScoreCard(
-                // Escribe aquí el código para acceder al tercer
-                // elemento del array String[][] data de la línea 13,
-                // la tarjeta rosa
-        );
+        pinkScoreCard.loadJudgeScoreCard(data[2]);
         System.out.println(pinkScoreCard);
 
         /**
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
-/*
+
         System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() +
                 " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
-*/
+
     }
 }
