@@ -30,11 +30,11 @@ public class ScoreCard {
         this.blueCorner = boxerName;
     }
 
-    private String getRcorner() {
+    String getRcorner() {
         return this.redCorner;
     }
 
-    private String getBcorner() {
+    String getBcorner() {
         return this.blueCorner;
     }
 

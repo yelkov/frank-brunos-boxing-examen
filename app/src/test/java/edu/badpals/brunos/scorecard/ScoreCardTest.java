@@ -9,10 +9,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ScoreCardTest {
-       ScoreCard whiteScoreCard = null;
-       ScoreCard blueScoreCard = null;
-       ScoreCard pinkScoreCard = null;
-       ScoreCard twelveScoreCard = null;
+       private ScoreCard whiteScoreCard = null;
+       private ScoreCard blueScoreCard = null;
+       private ScoreCard pinkScoreCard = null;
+       private ScoreCard twelveScoreCard = null;
 
         @Before
         public void setup(){
