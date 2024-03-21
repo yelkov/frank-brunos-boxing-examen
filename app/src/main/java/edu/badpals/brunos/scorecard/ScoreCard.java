@@ -58,7 +58,7 @@ public class ScoreCard {
 
     private void loadRounds(String[] judgeScoreCard) {
         for (int i = 0; i < judgeScoreCard.length; i++) {
-            this.rounds.add(RoundFactory.getRound(this.judgeScoreCard[i]));
+            this.rounds.add(RoundFactory.getRound(getJudgeScoreCard()[i]));
         }
     }
 
@@ -88,8 +88,7 @@ public class ScoreCard {
                        .append("\t\t\t").append(Byte.toString(getNumRounds())).append(" rounds\t\t\n")
                        .append("\tRound\tScore\tRound\tScore\tRound\n")
                        .append("\tScore\tTotal\t     \tTotal\tScore\n");
-
-        sb.append(printRounds());
+               sb.append(printRounds());
 
         return sb.toString();
     }
@@ -109,6 +108,11 @@ public class ScoreCard {
         }
         return sb.toString();
     }
+    public String getWinner(){
+        return this.getBlueBoxerFinalScore() > this.getRedBoxerFinalScore()? getBcorner()
+                : this.getBlueBoxerFinalScore() < this.getRedBoxerFinalScore()? getRcorner() : "Tie";
+    }
+
 
 }
 
