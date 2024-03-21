@@ -23,8 +23,8 @@ public class KnockdownRound implements Round{
     @Override
     public void boxerRoundScore() {
         String[] puntuaciones = this.roundScore.split(" - ");
-        this.redBoxerScore = (byte)Integer.parseInt(puntuaciones[0]);
-        this.blueBoxerScore = (byte)Integer.parseInt(puntuaciones[1]);
+        this.redBoxerScore = Byte.parseByte(puntuaciones[0]);
+        this.blueBoxerScore = Byte.parseByte(puntuaciones[1]);
     }
     @Override
     public String toString(){

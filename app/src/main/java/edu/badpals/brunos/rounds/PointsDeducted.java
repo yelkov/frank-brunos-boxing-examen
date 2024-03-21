@@ -30,17 +30,17 @@ public class PointsDeducted implements Round{
         String parsedScore;
         if (score.contains(" ,1")){
             parsedScore = score.replace(" ,1","");
-            return (byte)Integer.parseInt(parsedScore);
+            return Byte.parseByte(parsedScore);
         }
-        return (byte)Integer.parseInt(score);
+        return Byte.parseByte(score);
     }
     private byte parseComaRed(String score){
         String parsedScore;
         if (score.contains("1, ")){
             parsedScore = score.replace("1, ","");
-            return (byte)Integer.parseInt(parsedScore);
+            return Byte.parseByte(parsedScore);
         }
-        return (byte)Integer.parseInt(score);
+        return Byte.parseByte(score);
     }
     @Override
     public String toString(){
