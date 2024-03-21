@@ -101,17 +101,12 @@ public class ScoreCard {
 
     private int computeFinalScore(String boxerColor) {
         int totalScore = 0;
-        if (boxerColor == "red") {
-            for (Round round : rounds) {
+        for (Round round : rounds) {
+            if (boxerColor == "red"){
                 totalScore += round.getredBoxerScore();
-            }
-            return totalScore;
-        } else if (boxerColor == "blue") {
-            for (Round round : rounds) {
+            }else if (boxerColor == "blue") {
                 totalScore += round.getblueBoxerScore();
             }
-            return totalScore;
-
         }
         return totalScore;
     }
