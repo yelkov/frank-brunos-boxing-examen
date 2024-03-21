@@ -13,7 +13,7 @@ public class ScoreCard {
     private String color;
     private String redCorner = "";
     private String blueCorner = "";
-    private String[] judgeScoreCard = new String[10];
+    private String[] judgeScoreCard = {};
     private List<Round> rounds = new ArrayList<>();
 
     public ScoreCard(String color){
@@ -41,6 +41,9 @@ public class ScoreCard {
     private void setJudgeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
     }
+    private String[] getJudgeScoreCard(){
+        return this.judgeScoreCard;
+    }
 
     @Override
     public String toString(){
@@ -62,12 +65,16 @@ public class ScoreCard {
         return string.toString();
     }
 
-    public void loadJudgeScoreCard(String[] puntuaciones) {
-        setJudgeScoreCard(puntuaciones);
-        for (int i=0;i< judgeScoreCard.length;i++) {
+    public void loadJudgeScoreCard(String[] judgeScoreCard) {
+        setJudgeScoreCard(judgeScoreCard);
+        loadRounds(getJudgeScoreCard());
+    }
+
+    private void loadRounds(String[] judgeScoreCard) {
+        for (int i = 0; i< judgeScoreCard.length; i++) {
             this.rounds.add(RoundFactory.getRound(this.judgeScoreCard[i]));
                 }
-            }
+    }
 
     public int getRedBoxerFinalScore() {
         int redTotal = 0;
