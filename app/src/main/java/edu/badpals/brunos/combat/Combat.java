@@ -45,5 +45,30 @@ public class Combat {
 
         return redWins >= 2? redCorner : blueWins >= 2? blueCorner : "Tie";
     }
+    public String getResult(){
+        int redWins = this.getPlayerWins(redCorner);
+        int blueWins = this.getPlayerWins(blueCorner);
+        int ties = 3 - redWins - blueWins;
+        int biggerWins = redWins > blueWins ? redWins : blueWins;
+
+        if (biggerWins == 3){
+            return "Decision Unanime";
+        } else{
+            if(biggerWins == 2){
+                if(ties == 0){
+                    return "Decision Dividida";
+                } else{
+                    return "Decision de la Mayoria";
+                }
+            } else{
+                if(ties == 2){
+                    return "Empate Mayoritario";
+                } else{
+                    return "Empate";
+                }
+            }
+        }
+
+    }
 
 }
