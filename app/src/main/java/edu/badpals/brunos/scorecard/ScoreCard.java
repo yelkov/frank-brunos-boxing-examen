@@ -60,16 +60,25 @@ public class ScoreCard {
                 "\tRound\tScore\tRound\tScore\tRound\n" +
                 "\tScore\tTotal\t     \tTotal\tScore\n";
 
+        string += printRounds();
+
+        return string.toString();
+    }
+
+    private String printRounds() {
+        StringBuilder sb = new StringBuilder();
         Integer blueScore = 0;
         Integer redScore = 0;
         for (Round round : rounds) {
             blueScore += round.getblueBoxerScore();
             redScore += round.getredBoxerScore();
-            string += ("\t" + round.getredBoxerScore() + "\t" + redScore + "\t" + (rounds.indexOf(round) + 1) + "\t" + blueScore + "\t" + round.getblueBoxerScore() + "\n");
+            sb.append("\t").append(Byte.toString(round.getredBoxerScore()))
+              .append("\t").append(redScore.toString())
+              .append("\t").append((rounds.indexOf(round) + 1))
+              .append("\t").append(blueScore.toString())
+              .append("\t").append(Byte.toString(round.getblueBoxerScore())).append("\n");
         }
-        ;
-
-        return string.toString();
+        return sb.toString();
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
