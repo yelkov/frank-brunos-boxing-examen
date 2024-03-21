@@ -1,5 +1,6 @@
 package edu.badpals.brunos;
 
+import edu.badpals.brunos.combat.Combat;
 import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.PointsDeducted;
 import edu.badpals.brunos.rounds.RegularRound;
@@ -286,6 +287,9 @@ public class Brunosbox
         System.out.println("\n\t El ganador de la tarjeta WHITE es: "+whiteScoreCard.getWinner().toString());
         System.out.println("\t El ganador de la tarjeta BLUE es: "+blueScoreCard.getWinner().toString());
         System.out.println("\t El ganador de la tarjeta PINK es: "+pinkScoreCard.getWinner().toString());
+
+        Combat combat = new Combat(whiteScoreCard,blueScoreCard,pinkScoreCard);
+        System.out.println("\n\t El ganador del combate ha sido: "+combat.getWinner()+ "\n\t Con el resultado: "+combat.getResult());
 
     }
 }
