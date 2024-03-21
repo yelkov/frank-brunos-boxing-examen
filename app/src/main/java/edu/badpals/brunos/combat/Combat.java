@@ -1,4 +1,4 @@
-package edu.badpals.brunos.scorecard;
+package edu.badpals.brunos.combat;
 
 public class Combat {
     private ScoreCard whiteScoreCard;

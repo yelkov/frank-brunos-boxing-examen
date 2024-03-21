@@ -1,4 +1,4 @@
-package edu.badpals.brunos.scorecard;
+package edu.badpals.brunos.combat;
 
 import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.PointsDeducted;

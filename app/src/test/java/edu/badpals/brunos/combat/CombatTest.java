@@ -1,6 +1,5 @@
-package edu.badpals.brunos.scorecard;
+package edu.badpals.brunos.combat;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

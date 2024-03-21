@@ -4,7 +4,7 @@ import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.PointsDeducted;
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.RoundFactory;
-import edu.badpals.brunos.scorecard.ScoreCard;
+import edu.badpals.brunos.combat.ScoreCard;
 
 public class Brunosbox
 {
