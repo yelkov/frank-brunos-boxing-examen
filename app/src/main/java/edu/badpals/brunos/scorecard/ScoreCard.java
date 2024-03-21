@@ -41,6 +41,9 @@ public class ScoreCard {
     public byte getNumRounds() {
         return (byte) rounds.size();
     }
+    Round getRound(Integer position) {
+        return rounds.get(position);
+    }
 
     private void setJudgeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
@@ -84,7 +87,7 @@ public class ScoreCard {
     public String toString() {
         StringBuilder sb = new StringBuilder();
                sb.append("\t\t\t   ").append(getColor().toString()).append("\t\t\n")
-                       .append("\t\t").append(getBcorner().toString()).append("\t").append(getRcorner()).append("\t\t\n")
+                       .append("\t\t").append(getRcorner().toString()).append("\t").append(getBcorner()).append("\t\t\n")
                        .append("\t\t\t").append(Byte.toString(getNumRounds())).append(" rounds\t\t\n")
                        .append("\tRound\tScore\tRound\tScore\tRound\n")
                        .append("\tScore\tTotal\t     \tTotal\tScore\n");

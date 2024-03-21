@@ -7,12 +7,11 @@ import static org.junit.Assert.*;
 public class RegularRoundTest {
 
     @Test
-    public void testBoxerRoundScore(){
+    public void boxerRoundScoreToIntTest() {
         RegularRound round = new RegularRound("10 - 9");
         round.boxerRoundScore();
-        assertEquals("10",round.getRedBoxerScore());
-        assertEquals("9",round.getBlueBoxerScore());
-
+        assertEquals(10, round.getRedBoxerScore());
+        assertEquals(9, round.getBlueBoxerScore());
     }
 
 }
