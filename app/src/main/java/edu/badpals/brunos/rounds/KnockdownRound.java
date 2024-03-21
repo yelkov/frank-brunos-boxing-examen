@@ -11,12 +11,12 @@ public class KnockdownRound implements Round{
     }
 
     @Override
-    public byte getblueBoxerScore() {
+    public byte getBlueBoxerScore() {
         return this.blueBoxerScore;
     }
 
     @Override
-    public byte getredBoxerScore() {
+    public byte getRedBoxerScore() {
         return this.redBoxerScore;
     }
 

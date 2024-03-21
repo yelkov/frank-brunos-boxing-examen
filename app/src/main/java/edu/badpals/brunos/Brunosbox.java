@@ -98,8 +98,8 @@ public class Brunosbox
 
         RegularRound round = new RegularRound("10 - 9");
         round.boxerRoundScore();
-        System.out.println("\n\t Regular round\t" + round.getredBoxerScore() +
-                " - " + round.getblueBoxerScore());
+        System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
+                " - " + round.getBlueBoxerScore());
 
         /**
          * Carga en la tarjeta blanca
@@ -150,8 +150,8 @@ public class Brunosbox
 
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
         knockdownRound.boxerRoundScore();
-        System.out.println("\n\t knockdown round\t" + knockdownRound.getredBoxerScore() +
-                " - " + knockdownRound.getblueBoxerScore());
+        System.out.println("\n\t knockdown round\t" + knockdownRound.getRedBoxerScore() +
+                " - " + knockdownRound.getBlueBoxerScore());
 
         /**
          * Crea una clase RoundFactory que crea
@@ -222,13 +222,13 @@ public class Brunosbox
 
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
         deducted.boxerRoundScore();
-        System.out.println("\n\t points deducted round\t" + deducted.getredBoxerScore() +
-                " - " + deducted.getblueBoxerScore());
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                " - " + deducted.getBlueBoxerScore());
 
         deducted = new PointsDeducted("1, 8 - 10");
         deducted.boxerRoundScore();
-        System.out.println("\n\t points deducted round\t" + deducted.getredBoxerScore() +
-                " - " + deducted.getblueBoxerScore());
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                " - " + deducted.getBlueBoxerScore());
 
         /**
          * Extiende o modifica la clase RoundFactory para crear

@@ -9,12 +9,12 @@ public class PointsDeducted implements Round{
         boxerRoundScore();
     }
     @Override
-    public byte getredBoxerScore() {
+    public byte getRedBoxerScore() {
         return this.redBoxerScore;
     }
 
     @Override
-    public byte getblueBoxerScore() {
+    public byte getBlueBoxerScore() {
         return this.blueBoxerScore;
     }
 

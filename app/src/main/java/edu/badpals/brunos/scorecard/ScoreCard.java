@@ -1,11 +1,9 @@
 package edu.badpals.brunos.scorecard;
 
-import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.Round;
 import edu.badpals.brunos.rounds.RoundFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ScoreCard {
@@ -75,9 +73,9 @@ public class ScoreCard {
         int totalScore = 0;
         for (Round round : rounds) {
             if (boxerColor == "red"){
-                totalScore += round.getredBoxerScore();
+                totalScore += round.getRedBoxerScore();
             }else if (boxerColor == "blue") {
-                totalScore += round.getblueBoxerScore();
+                totalScore += round.getBlueBoxerScore();
             }
         }
         return totalScore;
@@ -101,13 +99,13 @@ public class ScoreCard {
         Integer blueScore = 0;
         Integer redScore = 0;
         for (Round round : rounds) {
-            blueScore += round.getblueBoxerScore();
-            redScore += round.getredBoxerScore();
-            sb.append("\t").append(Byte.toString(round.getredBoxerScore()))
+            blueScore += round.getBlueBoxerScore();
+            redScore += round.getRedBoxerScore();
+            sb.append("\t").append(Byte.toString(round.getRedBoxerScore()))
                     .append("\t").append(redScore.toString())
                     .append("\t").append((rounds.indexOf(round) + 1))
                     .append("\t").append(blueScore.toString())
-                    .append("\t").append(Byte.toString(round.getblueBoxerScore())).append("\n");
+                    .append("\t").append(Byte.toString(round.getBlueBoxerScore())).append("\n");
         }
         return sb.toString();
     }
