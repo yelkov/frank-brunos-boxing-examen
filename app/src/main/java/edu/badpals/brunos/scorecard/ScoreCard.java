@@ -16,50 +16,57 @@ public class ScoreCard {
     private String[] judgeScoreCard = {};
     private List<Round> rounds = new ArrayList<>();
 
-    public ScoreCard(String color){
+    public ScoreCard(String color) {
         this.color = color;
     }
-    private String getColor(){
+
+    private String getColor() {
         return this.color;
     }
-    public void setRCorner(String boxerName){
-          this.redCorner = boxerName;
+
+    public void setRCorner(String boxerName) {
+        this.redCorner = boxerName;
     }
-    public void setBCorner(String boxerName){
+
+    public void setBCorner(String boxerName) {
         this.blueCorner = boxerName;
     }
-    private String getRcorner(){
+
+    private String getRcorner() {
         return this.redCorner;
     }
-    private String getBcorner(){
+
+    private String getBcorner() {
         return this.blueCorner;
     }
-    public byte getNumRounds(){
-        return (byte)rounds.size();
+
+    public byte getNumRounds() {
+        return (byte) rounds.size();
     }
 
     private void setJudgeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
     }
-    private String[] getJudgeScoreCard(){
+
+    private String[] getJudgeScoreCard() {
         return this.judgeScoreCard;
     }
 
     @Override
-    public String toString(){
-         String string = "\t\t\t   "+getColor()+"\t\t\n"+
-                    "\t\t"+getBcorner()+"\t"+getRcorner()+"\t\t\n"+
-                    "\t\t\t"+getNumRounds()+" rounds\t\t\n"+
-                    "\tRound\tScore\tRound\tScore\tRound\n"+
-                    "\tScore\tTotal\t     \tTotal\tScore\n";
+    public String toString() {
+        String string = "\t\t\t   " + getColor() + "\t\t\n" +
+                "\t\t" + getBcorner() + "\t" + getRcorner() + "\t\t\n" +
+                "\t\t\t" + getNumRounds() + " rounds\t\t\n" +
+                "\tRound\tScore\tRound\tScore\tRound\n" +
+                "\tScore\tTotal\t     \tTotal\tScore\n";
 
         Integer blueScore = 0;
         Integer redScore = 0;
         for (Round round : rounds) {
             blueScore += round.getblueBoxerScore();
             redScore += round.getredBoxerScore();
-            string += ("\t"+round.getredBoxerScore()+"\t"+redScore+"\t"+(rounds.indexOf(round)+1)+"\t"+blueScore+"\t"+round.getblueBoxerScore()+"\n");
-                 }
+            string += ("\t" + round.getredBoxerScore() + "\t" + redScore + "\t" + (rounds.indexOf(round) + 1) + "\t" + blueScore + "\t" + round.getblueBoxerScore() + "\n");
+        }
         ;
 
         return string.toString();
@@ -71,24 +78,34 @@ public class ScoreCard {
     }
 
     private void loadRounds(String[] judgeScoreCard) {
-        for (int i = 0; i< judgeScoreCard.length; i++) {
+        for (int i = 0; i < judgeScoreCard.length; i++) {
             this.rounds.add(RoundFactory.getRound(this.judgeScoreCard[i]));
-                }
+        }
     }
 
     public int getRedBoxerFinalScore() {
-        int redTotal = 0;
-        for (Round round : rounds){
-            redTotal += round.getredBoxerScore();
-        }return redTotal;
+        return computeFinalScore("red");
     }
-
     public int getBlueBoxerFinalScore() {
-        int blueTotal = 0;
-        for (Round round : rounds){
-            blueTotal += round.getblueBoxerScore();
-        }return blueTotal;
+        return computeFinalScore("blue");
     }
-}
 
+    private int computeFinalScore(String boxerColor) {
+        int totalScore = 0;
+        if (boxerColor == "red") {
+            for (Round round : rounds) {
+                totalScore += round.getredBoxerScore();
+            }
+            return totalScore;
+        } else if (boxerColor == "blue") {
+            for (Round round : rounds) {
+                totalScore += round.getblueBoxerScore();
+            }
+            return totalScore;
+
+        }
+        return totalScore;
+    }
+
+}
 
