@@ -130,10 +130,10 @@ public class ScoreCardTest {
     }
     @Test
     public void winner(){
-            assertEquals("Apollo Creed",whiteScoreCard.getWinner());
-            assertEquals("Rocky Balboa",blueScoreCard.getWinner());
-            assertEquals("Rocky Balboa",pinkScoreCard.getWinner());
-            assertEquals("Tie",twelveScoreCard.getWinner());
+            assertEquals("Apollo Creed",whiteScoreCard.getCardWinner());
+            assertEquals("Rocky Balboa",blueScoreCard.getCardWinner());
+            assertEquals("Rocky Balboa",pinkScoreCard.getCardWinner());
+            assertEquals("Tie",twelveScoreCard.getCardWinner());
     }
 
 }
