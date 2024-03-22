@@ -33,9 +33,9 @@ public class Combat {
 
     private int getPlayerWins(String player){
         int playerWins = 0;
-        if(player.equals(whiteScoreCard.getWinner())){playerWins++;}
-        if(player.equals(blueScoreCard.getWinner())){playerWins++;}
-        if(player.equals(pinkScoreCard.getWinner())){playerWins++;}
+        if(player.equals(whiteScoreCard.getCardWinner())){playerWins++;}
+        if(player.equals(blueScoreCard.getCardWinner())){playerWins++;}
+        if(player.equals(pinkScoreCard.getCardWinner())){playerWins++;}
         return playerWins;
     }
 

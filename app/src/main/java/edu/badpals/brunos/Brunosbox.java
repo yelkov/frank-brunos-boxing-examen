@@ -284,12 +284,13 @@ public class Brunosbox
         System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() +
                 " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
-        System.out.println("\n\t El ganador de la tarjeta WHITE es: "+whiteScoreCard.getWinner().toString());
-        System.out.println("\t El ganador de la tarjeta BLUE es: "+blueScoreCard.getWinner().toString());
-        System.out.println("\t El ganador de la tarjeta PINK es: "+pinkScoreCard.getWinner().toString());
+        System.out.println("\n\t El ganador de la tarjeta WHITE es: "+whiteScoreCard.getCardWinner().toString());
+        System.out.println("\t El ganador de la tarjeta BLUE es: "+blueScoreCard.getCardWinner().toString());
+        System.out.println("\t El ganador de la tarjeta PINK es: "+pinkScoreCard.getCardWinner().toString());
 
         Combat combat = new Combat(whiteScoreCard,blueScoreCard,pinkScoreCard);
-        System.out.println("\n\t El ganador del combate ha sido: "+combat.getWinner()+ "\n\t Con el resultado: "+combat.getResult());
+        System.out.println("\n\t El ganador del combate ha sido: "+combat.getWinner().toString()+
+                            "\n\t Con el resultado: "+combat.getResult().toString());
 
     }
 }

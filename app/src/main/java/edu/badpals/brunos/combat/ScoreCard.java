@@ -111,7 +111,7 @@ public class ScoreCard {
         }
         return sb.toString();
     }
-    public String getWinner(){
+    public String getCardWinner(){
         return this.getBlueBoxerFinalScore() > this.getRedBoxerFinalScore()? getBcorner()
                 : this.getBlueBoxerFinalScore() < this.getRedBoxerFinalScore()? getRcorner() : "Tie";
     }
