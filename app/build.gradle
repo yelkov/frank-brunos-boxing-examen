@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13.2'
+    implementation 'com.github.freva:ascii-table:1.8.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -41,4 +42,14 @@ jar {
                 'Package-Vendor' : 'yelkov',
                 'Specification-Title' : 'Examen Brunosbox'
     }
+}
+// construir con: gradle fatJar
+// build/libs/brunosbox-1.0-SNAPSHOT.jar
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'edu.badpals.brunos.Brunosbox'
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
