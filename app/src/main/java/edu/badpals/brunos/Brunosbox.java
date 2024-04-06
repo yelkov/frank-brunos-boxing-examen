@@ -1,11 +1,12 @@
 package edu.badpals.brunos;
 
+import com.github.freva.asciitable.AsciiTable;
 import edu.badpals.brunos.combat.Combat;
+import edu.badpals.brunos.combat.ScoreCard;
 import edu.badpals.brunos.rounds.KnockdownRound;
 import edu.badpals.brunos.rounds.PointsDeducted;
 import edu.badpals.brunos.rounds.RegularRound;
 import edu.badpals.brunos.rounds.RoundFactory;
-import edu.badpals.brunos.combat.ScoreCard;
 
 public class Brunosbox
 {
@@ -57,6 +58,8 @@ public class Brunosbox
                 }
 
         };
+
+        System.out.println(AsciiTable.getTable(headers,data));
 
         /**
          * Crea una tarjeta de puntos de boxeo
